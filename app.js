@@ -40,7 +40,7 @@ const connection=mongoose.connection.once('open', () => {
 // setup routes
 
 app.use("/",authRoutes);
-app.use("/profile", submitRoutes);
+app.use("/submit", submitRoutes);
 
 
 app.get("/", (req, res)=>{
