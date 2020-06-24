@@ -71,7 +71,8 @@ router.get('/auth/google/secrets',
             
         }else{
             if(foundUsers){
-            res.render("secrets", {usersWithSecrets: foundUsers})
+            res.render("secrets", {usersWithSecrets: foundUsers, 
+            user:req.user})
         }
     }
     })

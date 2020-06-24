@@ -19,7 +19,9 @@ const authCheck = (req, res, next)=>{
 
 router.get("/", authCheck, (req, res)=>{
     
-    res.render("profile", {user: req.user})
+    res.render("secrets", {
+        user: req.user
+    })
 
 })
 
