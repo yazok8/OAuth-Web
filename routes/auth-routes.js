@@ -1,7 +1,12 @@
 const router=require("express").Router();
 const passport = require ("passport");
 const User= require("../models/user-model");
+const {List, Item}= require("../models/user-model");
 const bodyParser = require("body-parser");
+
+
+
+//I have added list-model.js file as well as the route.post for secret in the auth-routes//
 
 passport.use(User.createStrategy());
 
@@ -64,6 +69,7 @@ router.get('/auth/google/secrets',
 
   router.get("/secrets", (req,res)=>{
 
+
     User.find({"secret": {$ne:null}}, (err, foundUsers)=>{
     
         if(err){
@@ -71,12 +77,14 @@ router.get('/auth/google/secrets',
             
         }else{
             if(foundUsers){
-            res.render("secrets", {usersWithSecrets: foundUsers, 
-            user:req.user})
+            res.render("secrets", {
+            usersWithSecrets: foundUsers
+        })
         }
     }
     })
     });
+
     
     router.get("/submit", (req, res)=>{
         if(req.isAuthenticated()){
