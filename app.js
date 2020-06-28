@@ -1,3 +1,5 @@
+
+require('dotenv').config();
 const express= require("express"); 
 const authRoutes=require("./routes/auth-routes");
 const submitRoutes= require("./routes/submit-routes");
@@ -8,6 +10,7 @@ const cookieSession = require('cookie-session')
 const app= express();
 const passport= require("passport"); 
 const bodyParser = require("body-parser");
+
 
 app.use(express.static(__dirname + '/public'));
 

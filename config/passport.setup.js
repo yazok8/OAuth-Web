@@ -1,8 +1,8 @@
 const passport= require("passport"); 
 const GoogleStrategy = require('passport-google-oauth20').Strategy;
-const keys= require("./keys");
 const User= require("../models/user-model");
-const findOrCreate = require('mongoose-findorcreate')
+const findOrCreate = require('mongoose-findorcreate');
+require('dotenv').config();
 
 
 
@@ -18,8 +18,8 @@ passport.deserializeUser((id, done)=> {
 
 
 passport.use(new GoogleStrategy({
-    clientID: keys.google.clientID,
-    clientSecret: keys.google.clientSecret,
+    clientID: process.env.clientID,
+    clientSecret: process.env.clientSecret,
     callbackURL: "http://localhost:3000/auth/google/secrets", 
     userProfileURL: "https://www.googleapis.com/oauth2/v3/userinfo"
 
