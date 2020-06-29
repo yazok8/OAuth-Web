@@ -1,7 +1,7 @@
 const router=require("express").Router();
 const passport = require ("passport");
 const User= require("../models/user-model");
-const {List, Item}= require("../models/user-model");
+// const {List, Item}= require("../models/user-model");
 const bodyParser = require("body-parser");
 
 
