@@ -14,7 +14,6 @@ const userSchema= new mongoose.Schema ({
     username: String,
     googleId: String,
     secret: String,
-    facebooId: String
 })
 
 
