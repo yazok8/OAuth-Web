@@ -9,12 +9,19 @@ const cookieSession = require('cookie-session')
 const app= express();
 const passport= require("passport"); 
 const bodyParser = require("body-parser");
+const enforce= require("express-sslify");
 
 
 app.use(express.static(__dirname + '/public'));
 
 app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({extended: true}));
+
+if(process.env.NODE_ENV==="production"){
+    app.use(compression);
+    app.use(enforce.HTTPS({ trustProtoHeader: true }));
+
+};
 
 
 app.use(cookieSession({

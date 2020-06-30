@@ -20,7 +20,7 @@ passport.deserializeUser((id, done)=> {
 passport.use(new GoogleStrategy({
     clientID: process.env.clientID,
     clientSecret: process.env.clientSecret,
-    callbackURL: "/auth/google/secrets", 
+    callbackURL: "http://localhost:3000/auth/google/secrets", 
     userProfileURL: "https://www.googleapis.com/oauth2/v3/userinfo", 
     proxy: true
 
