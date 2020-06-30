@@ -13,8 +13,8 @@ const userSchema= new mongoose.Schema ({
     password: String,
     username: String,
     googleId: String,
-    // facebooId: String,
-    secret: String
+    secret: String,
+    facebooId: String
 })
 
 
