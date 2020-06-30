@@ -66,11 +66,6 @@ router.get('/auth/google/secrets',
     // Successful authentication, redirect home.
   });
 
-  router.get('/auth/facebook', passport.authenticate('facebook', { scope : ['email']}));
-
-  router.get('/auth/facebook/secrets',
-  passport.authenticate('facebook', { successRedirect: '/secrets',
-                                      failureRedirect: '/login' }));
 
   router.get("/secrets", (req,res)=>{
 
