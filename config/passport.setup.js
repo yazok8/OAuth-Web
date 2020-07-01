@@ -70,7 +70,7 @@ passport.use(new GoogleStrategy({
    passport.use(new FacebookStrategy({
         clientID: process.env.FB_APP_ID,
         clientSecret: process.env.FB_APP_SECRET,
-        callbackURL: "http://localhost:3000/auth/facebook/secrets",
+        callbackURL: "/auth/facebook/secrets",
         profileFields: ['id', 'emails', 'displayName']
       },
       function(accessToken, refreshToken, profile, cb) {
